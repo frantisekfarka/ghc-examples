@@ -1,0 +1,9 @@
+
+Goldfish.hs:25:1: Warning:
+    Pattern match(es) are overlapped
+    In an equation for ‘primMul’:
+        primMul Two One = ...
+        primMul One Two = ...
+WARNING: file compiler/simplCore/SimplCore.lhs, line 629
+    Simplifier bailing out after 4 iterations [36, 1, 1, 1]
+      Size = {terms: 99, types: 35, coercions: 0}

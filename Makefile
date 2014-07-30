@@ -20,11 +20,15 @@ TESTS = sample_1/Sample1.res \
 	sample_2/Sample2.res \
 	sample_3/ClientBefore.res \
 	sample_3/ClientAfter.res \
+	sample_4/Simple.res \
+	sample_4/Advanced.res \
 	sample_5/Foldable.res
 
 EXECUTABLES = \
 	sample_3/ClientBefore \
 	sample_3/ClientAfter \
+	sample_4/Simple \
+	sample_4/Advanced \
 	sample_5/Foldable
 
 .PHONY: clean
@@ -34,6 +38,7 @@ clean:
 		$(EXECUTABLES)
 
 %.stdout: %.hs
+	$(CD) $(@D); $(RM) *.o *.hi
 	-$(CD) $(@D); $(GHC) $(<F) >$(@F) 2>$(*F).stderr
 
 %.res: %.stdout

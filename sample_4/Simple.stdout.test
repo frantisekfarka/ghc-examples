@@ -1,0 +1,4 @@
+[1 of 3] Compiling Num              ( Num.hs, Num.o )
+[2 of 3] Compiling Goldfish         ( Goldfish.hs, Goldfish.o )
+[3 of 3] Compiling Main             ( Simple.hs, Simple.o )
+Linking Simple ...
