@@ -1,0 +1,3 @@
+[1 of 2] Compiling LibBefore        ( LibBefore.hs, LibBefore.o )
+[2 of 2] Compiling Main             ( ClientBefore.hs, ClientBefore.o )
+Linking ClientBefore ...

@@ -10,16 +10,22 @@ default: testall
 # Some tools
 #
 RM=rm -f
-GHC=../ghc/inplace/bin/ghc-stage2
+CD=cd
+GHC=../../ghc/inplace/bin/ghc-stage2
 
 #
 # Test
 #
 TESTS = sample_1/Sample1.res \
 	sample_2/Sample2.res \
+	sample_3/ClientBefore.res \
+	sample_3/ClientAfter.res \
 	sample_5/Foldable.res
 
-EXECUTABLES = sample_5/Foldable
+EXECUTABLES = \
+	sample_3/ClientBefore \
+	sample_3/ClientAfter \
+	sample_5/Foldable
 
 .PHONY: clean
 clean:
@@ -28,7 +34,7 @@ clean:
 		$(EXECUTABLES)
 
 %.stdout: %.hs
-	-$(GHC) $< >$@ 2>$*.stderr
+	-$(CD) $(@D); $(GHC) $(<F) >$(@F) 2>$(*F).stderr
 
 %.res: %.stdout
 	diff $< $<.test
@@ -37,7 +43,7 @@ clean:
 	cat $@
 
 
-testall: $(TESTS)
+testall: clean $(TESTS)
 	@echo 
 	@echo Test results
 	@echo 
@@ -48,5 +54,5 @@ runall: testall
 	@echo 
 	@echo Running executables
 	@echo 
-	for i in "$(EXECUTABLES)"; do echo -n "Executable $$i"; ./$$i; done
+	for i in $(EXECUTABLES); do echo -n "Executable$$i: "; ./$$i; done
 
