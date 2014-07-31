@@ -10,7 +10,7 @@ source files also expected outputs of the compiler.
 
 The attached makefile contains following targets:
 
-	testall (default targer)
+	testall (default target)
 	    - compiles and compares all samples
 
 	runall
@@ -39,6 +39,6 @@ Description of the examples
 	- demonstration of Numeric classes adaptation
 
 ./sample_5
-	- more complex example with default instaces of Functor and
+	- more complex example with default instances of Functor and
 	Foldable derived from Traversable
 	
