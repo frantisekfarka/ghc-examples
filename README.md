@@ -23,22 +23,22 @@ The attached makefile contains following targets:
 Description of the examples
 ---------------------------
 
-./sample_1 
+* ./sample_1 
 	- simple example showing syntax
 
-./sample_2 
+* ./sample_2 
 	- simple example shoving that default instance syntax
 	is invalid without the language extension pragma
 
-./sample_3
+* ./sample_3
 	- an example shoving change in the library (
 	Functor - Applicative - Monad proposal) without the change
 	of a client
 
-./sample_4
+* ./sample_4
 	- demonstration of Numeric classes adaptation
 
-./sample_5
+* ./sample_5
 	- more complex example with default instances of Functor and
 	Foldable derived from Traversable
 	
